@@ -1,3 +1,5 @@
+lines(p, GenoFreq[,"ab"], lwd=2, col="red")
+lines(p, GenoFreq[, "bb"], lwd=2, col="blue")
 legend("top", legend=c("aa", "ab", "bb"), col=c("red", "purple", "blue"), lty=1, lwd=2, bty="n")
 Pop <- simPop(500)
 points(Pop[,"freqa"], Pop[,"Genotypes.aa"]/500, pch=21, bg="red")
@@ -343,15 +345,34 @@ library('geiger')#
 fitContinuous(tree, svl, model='EB')#
 fitContinuous(tree, svl, model='OU')#
 fitContinuous(tree, svl, model='BM')
-setwd('~/Desktop/Evolution/Tasks/Task_11')
-x <- rnorm(100, mean=5, sd=2)
+setwd('~/Desktop/Evolution/Tasks/Task_11')#
+x <- rnorm(100, mean=5, sd=2)#
 x#
-y <- (x *5) + 2 + (rnorm(100, 0:0.1 )))
-y <- (x*5) + 2 + (rnorm(100, 0:0.1 )))
-y <- (x *5) + 2 + (rnorm(100, 0:0.1 ))
+y <- (x *5) + 2 + (rnorm(100, 0:0.1 ))#
 y#
-plot(x, y)
-abline(lm(y~x), col='red')
-coef(lm(y~x))
-z <- c()
-x <- rnorm(100, mean=5, sd=2)
+plot(x, y)#
+abline(lm(y~x), col='red')#
+coef(lm(y~x))#
+y intercept = 2.193123 x intercept = 4.989395#
+z <- c()#
+x <- rnorm(100, mean=5, sd=2)#
+for(i in 1:100) {#
+  z[i]<-runif(1)#
+  y<- (x* z[i]) + 2 +(rnorm(100, 0:0.1))#
+  l<-coef(lm(z[1:100]~y))#
+}#
+pdf("2.pdf", height=4, width=4)#
+plot(z[1:100], y)#
+abline(lm(y~z[1:100]))#
+dev.off()#
+pdf("3.pdf", height=4, width=4)#
+plot(c(z, -0.03))#
+dev.off()
+install.packages("meme")
+library('meme')
+library("meme")
+library('meme')
+install.packages('meme')#
+library('meme')
+install.packages('meme')
+library('meme')
